@@ -22,9 +22,9 @@ cd AlignThenInject
 
 git clone https://github.com/Jiaxuan-Li/EVCap.git
 
-# You can name the env as you like; here we use "ifcap" as an example
-conda env create -f EVCap/environment.yaml -n ifcap
-conda activate ifcap
+# You can name the env as you like; here we use "xxx" as an example
+conda env create -f EVCap/environment.yaml -n  xxx
+conda activate xxx
 
 data/coco/
   images/
@@ -49,7 +49,7 @@ task_inject.slurm: Stage 2 (Inject)
 
 Before submission, update:
 
-conda env name (e.g., ifcap)
+conda env name (e.g., xxx)
 
 DATA_ROOT (COCO root path)
 
