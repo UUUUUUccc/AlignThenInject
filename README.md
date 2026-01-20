@@ -68,3 +68,22 @@ sbatch task_inject.slurm
 
 
 Checkpoints will be saved under checkpoints/ (or the directory specified in your scripts).
+
+
+
+6. Acknowledgements
+
+This project is built upon EVCap, and follows its environment setup and evaluation conventions.
+
+7. Citation
+
+If you use EVCap in your work, please cite EVCap (example):
+
+@article{li2024evcap,
+  title={EVCap: Retrieval-Augmented Image Captioning with External Visual-Name Memory for Open-World Comprehension},
+  author={Jiaxuan Li and Duc Minh Vo and Akihiro Sugimoto and Hideki Nakayama},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2024},
+}
+
