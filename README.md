@@ -19,3 +19,52 @@ This repository is **built upon EVCap** and follows its overall training/evaluat
 ```bash
 git clone https://github.com/UUUUUUccc/AlignThenInject.git
 cd AlignThenInject
+
+git clone https://github.com/Jiaxuan-Li/EVCap.git
+
+# You can name the env as you like; here we use "ifcap" as an example
+conda env create -f EVCap/environment.yaml -n ifcap
+conda activate ifcap
+
+data/coco/
+  images/
+    train2017/
+    val2017/
+  annotations/
+    annotations/
+      captions_train2017.json
+      captions_val2017.json
+      instances_train2017.json
+      instances_val2017.json
+      ...
+4. Training (Slurm / sbatch)
+
+This repo provides two Slurm scripts:
+
+task_align.slurm: Stage 1 (Align)
+
+task_inject.slurm: Stage 2 (Inject)
+
+4.1 Edit key fields
+
+Before submission, update:
+
+conda env name (e.g., ifcap)
+
+DATA_ROOT (COCO root path)
+
+MODEL_ROOT (weights/models path)
+
+OUTDIR / CKPT_DIR (recommended checkpoints/ or your desired output path)
+
+Slurm resources: GPUs, partition, walltime, memory, etc.
+
+4.2 Submit jobs
+# Stage 1: Align
+sbatch task_align.slurm
+
+# Stage 2: Inject (submit after Stage 1 finishes successfully)
+sbatch task_inject.slurm
+
+
+Checkpoints will be saved under checkpoints/ (or the directory specified in your scripts).
